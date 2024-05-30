@@ -41,17 +41,14 @@ object DummyContent {
 
     private fun makeDetails(position: Int): String {
         val builder = StringBuilder()
-        builder.append("Details about Item: ").append(position)
-        for (i in 0..position - 1) {
-            builder.append("\nMore details information here.")
-        }
+        builder.append("Time Stamp for game: ").append(position)
         return builder.toString()
     }
 
     /**
      * A dummy item representing a piece of content.
      */
-    data class PastGameData(val id: String, val content: String, val details: String) {
-        override fun toString(): String = content
+    data class PastGameData(val id: String, val who_won: String, val timeStamp: String) {
+        override fun toString(): String = who_won
     }
 }

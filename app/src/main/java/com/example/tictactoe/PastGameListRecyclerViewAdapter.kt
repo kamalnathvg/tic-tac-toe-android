@@ -42,7 +42,8 @@ class PastGameListRecyclerViewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = mValues[position]
         holder.mIdView.text = item.id
-        holder.mContentView.text = item.content
+        holder.mContentView.text = item.who_won
+        holder.mDateTime.text = item.timeStamp
 
         with(holder.mView) {
             tag = item
@@ -54,8 +55,8 @@ class PastGameListRecyclerViewAdapter(
 
     inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
         val mIdView: TextView = mView.item_number
-        val mContentView: TextView = mView.content
-
+        val mContentView: TextView = mView.winner
+        val mDateTime : TextView = mView.dateTime
         override fun toString(): String {
             return super.toString() + " '" + mContentView.text + "'"
         }
